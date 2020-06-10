@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import {HotStone} from 'hotstone-client'
 import './index.css';
 import App from '../App';
 
-// const tags = window.__data.tags
-// console.log(">>> TAGS: ", tags)
 ReactDOM.hydrate(
-    <BrowserRouter>
-        <App data={window.__data} />
-    </BrowserRouter>,
+    <HotStone tags={window.__data.tags}>
+        <App />
+    </HotStone>,
     document.getElementById('root')
 );
