@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HotStone} from 'hotstone-client'
+import {HotStone} from '../hotstone'
 import './index.css';
 import App from '../App';
 

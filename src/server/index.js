@@ -4,7 +4,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import ReactDOMServer from 'react-dom/server';
 import serialize from 'serialize-javascript';
-import { HotStoneClient, HotStone } from 'hotstone-client';
+import { HotStoneClient } from 'hotstone-client';
+import {HotStone} from '../hotstone'
 import App from '../App';
 
 // import htmlMiddleware from './middleware/html';
