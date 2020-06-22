@@ -1,5 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import { renderHelmetTags } from 'hotstone-client/lib/react';
 
 const HotStoneContext = React.createContext([]);
 
@@ -13,13 +14,9 @@ class HotStoneWrapper extends React.Component {
 
   render() {
       const { tags } = this.state;
-      const tagElements = tags.map(({ id, type, attributes, value }) => {
-          attributes.key = id;
-          return React.createElement(type, attributes, value);
-      });
       return (
           <div>
-              <Helmet>{tagElements}</Helmet>
+              <Helmet>{renderHelmetTags(tags)}</Helmet>
               <HotStoneContext.Provider value={tags}>
                   {this.props.children}
               </HotStoneContext.Provider>
