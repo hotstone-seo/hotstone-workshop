@@ -1,7 +1,14 @@
 
 Simple SSR app (from [Create React SSR App](https://github.com/trustworktech/create-react-ssr-app)) with HotStone Client
 
-## Run with HotStone Client master version
+## Run with HotStone Client latest stable version (from npm)
+
+```shell
+$ npm install
+$ npm run start
+```
+
+## Run with HotStone Client HEAD version
 
 Edit `package.json`:
 
