@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import ReactDOMServer from 'react-dom/server';
 import serialize from 'serialize-javascript';
 import { HotStoneClient } from 'hotstone-client';
-import {HotStone} from '../hotstone'
+import { HelmetWrapper } from '../hotstone'
 import App from '../App';
 
 // import htmlMiddleware from './middleware/html';
@@ -49,9 +49,9 @@ app.get('*', (req, res, next) => {
             const data = { tags }
 
             const appString = ReactDOMServer.renderToString(
-                <HotStone tags={tags}>
+                <HelmetWrapper tags={tags}>
                     <App />
-                </HotStone>
+                </HelmetWrapper>
             );
             const helmet = Helmet.renderStatic();
             res.send(template({ body: appString, helmet: helmet }, data));
