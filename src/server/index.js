@@ -20,8 +20,8 @@ app.use(express.static(publicPath));
 
 const hotstoneURL = 'http://localhost:8089'
 const clientKey = 'Otdu1qe.A5eKbNQ3Kj26kiTQmwWAmzaQGk5uYmSI'
-const cacheConfig = { cacheManager: `./hotstone-local-cache` }
-const client = new HotStoneClient(hotstoneURL, clientKey, cacheConfig);
+const fetchOpts = { cacheManager: `./hotstone-local-cache` }
+const client = new HotStoneClient(hotstoneURL, clientKey, fetchOpts);
 
 const template = ({ body, helmet }, data) => {
     return `
