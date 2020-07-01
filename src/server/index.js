@@ -56,6 +56,7 @@ app.get('*', (req, res, next) => {
             const helmet = Helmet.renderStatic();
             res.send(template({ body: appString, helmet: helmet }, data));
         } catch (error) {
+            console.error('Log err: ', error)
             next(error);
         }
     })();
