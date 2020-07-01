@@ -27,5 +27,5 @@ Edit `package.json`:
 Run:
 
 ```shell
-CLIENT_SRC=~/projects/hotstone-seo/hotstone-seo/client; cd $CLIENT_SRC  && npm run build && npm pack && cd - && cp $CLIENT_SRC/*.tgz vendor/ && npm i && npm run start
+CLIENT_SRC=~/projects/hotstone-seo/hotstone-seo/client; cd $CLIENT_SRC  && npm run build && npm pack && cd - && rm vendor/*.tgz && cp $CLIENT_SRC/*.tgz vendor/ && npm i && npm run start
 ```
