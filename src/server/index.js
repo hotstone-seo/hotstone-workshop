@@ -44,8 +44,22 @@ const template = ({ body, helmet }, data) => {
 app.get('*', (req, res, next) => {
     (async function () {
         try {
+            const headerParams = {
+              channelId: "WEB",
+              currency: "IDR",
+              customerSessionId: "d41d8cd98f00b204e9800998ecf8427e",
+              isVerifiedPhoneNumber: "false",
+              lang: "en",
+              requestId: "23123123",
+              serviceId: "gateway",
+              storeId: "TIKETCOM",
+              "true-client-ip": "192.168.1.1",
+              "user-agent": "Chrome",
+              username: "username",
+              "x-forwarded-host": "192.168.1.1",
+            }
             const rule = await client.match(req.path);
-            const tags = await client.tags(rule, "en_US");
+            const tags = await client.tags(rule, "en_US", headerParams);
             const data = { tags }
 
             const appString = ReactDOMServer.renderToString(
